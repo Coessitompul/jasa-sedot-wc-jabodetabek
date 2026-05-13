@@ -1,3 +1,6 @@
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://sedotwcjabodetabek.com"
+
 export const COMPANY = {
   name: "Sedot WC Jabodetabek",
   tagline: "Solusi Sanitasi Profesional Jabodetabek",

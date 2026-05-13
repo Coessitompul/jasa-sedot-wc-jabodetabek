@@ -3,10 +3,22 @@ import MiniHero from "@/components/shared/MiniHero"
 import BlogFilter from "@/components/shared/BlogFilter"
 import CTABannerWA from "@/components/shared/CTABannerWA"
 
+import { SITE_URL } from "@/lib/constants"
+
 export const metadata: Metadata = {
-  title: "Blog & Artikel",
+  title: "Blog Sedot WC & Tips Sanitasi — Panduan Lengkap",
   description:
-    "Tips, panduan, dan informasi seputar sanitasi WC, perawatan septic tank, dan layanan sedot WC profesional Jabodetabek.",
+    "Tips merawat septic tank, panduan sedot WC, perbandingan harga, dan informasi sanitasi terlengkap untuk rumah tangga dan komersial di Jabodetabek.",
+  alternates: { canonical: `${SITE_URL}/blog` },
+  openGraph: {
+    title: "Blog Sedot WC & Tips Sanitasi — Panduan Lengkap",
+    description: "Tips merawat septic tank, panduan sedot WC, perbandingan harga, dan informasi sanitasi terlengkap untuk Jabodetabek.",
+    url: `${SITE_URL}/blog`,
+  },
+  twitter: {
+    title: "Blog Sedot WC & Tips Sanitasi — Panduan Lengkap",
+    description: "Tips merawat septic tank, panduan sedot WC, perbandingan harga, dan informasi sanitasi terlengkap untuk Jabodetabek.",
+  },
 }
 
 export default function BlogPage() {

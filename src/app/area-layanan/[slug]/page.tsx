@@ -10,7 +10,7 @@ import FaqAccordion from "@/components/shared/FaqAccordion"
 import { areaList } from "@/data/area"
 import { layananList } from "@/data/layanan"
 import { testimoniList } from "@/data/testimoni"
-import { getWALink } from "@/lib/constants"
+import { getWALink, COMPANY, SITE_URL } from "@/lib/constants"
 
 export async function generateStaticParams() {
   return areaList.map((area) => ({ slug: area.slug }))
@@ -25,8 +25,18 @@ export async function generateMetadata({
   const area = areaList.find((a) => a.slug === slug)
   if (!area) return {}
   return {
-    title: `Jasa Sedot WC ${area.nama}`,
-    description: `Jasa sedot WC profesional di ${area.nama}. Melayani 24 jam, respon cepat 1-2 jam. Harga transparan, bergaransi. Hubungi sekarang!`,
+    title: `Jasa Sedot WC ${area.nama} — Cepat, Bersih & Bergaransi`,
+    description: `Jasa sedot WC profesional di ${area.nama}. Melayani 24 jam, respon cepat 1-2 jam. Harga transparan mulai Rp 300.000, bergaransi. Hubungi sekarang!`,
+    alternates: { canonical: `${SITE_URL}/area-layanan/${area.slug}` },
+    openGraph: {
+      title: `Jasa Sedot WC ${area.nama} — Cepat, Bersih & Bergaransi`,
+      description: `Sedot WC profesional di ${area.nama}. Respon < 2 jam, 24 jam/7 hari, harga transparan mulai Rp 300.000.`,
+      url: `${SITE_URL}/area-layanan/${area.slug}`,
+    },
+    twitter: {
+      title: `Jasa Sedot WC ${area.nama} — Cepat, Bersih & Bergaransi`,
+      description: `Sedot WC profesional di ${area.nama}. Respon < 2 jam, 24 jam/7 hari, harga transparan mulai Rp 300.000.`,
+    },
   }
 }
 
@@ -62,8 +72,31 @@ export default async function AreaDetailPage({
     t.kota.toLowerCase().includes(area.nama.toLowerCase().split(" ")[0])
   )
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Beranda",       item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Area Layanan",  item: `${SITE_URL}/area-layanan` },
+      { "@type": "ListItem", position: 3, name: area.nama,       item: `${SITE_URL}/area-layanan/${area.slug}` },
+    ],
+  }
+
+  const serviceLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `Jasa Sedot WC ${area.nama}`,
+    description: area.deskripsi,
+    provider: { "@type": "LocalBusiness", name: COMPANY.name, telephone: COMPANY.phoneTel },
+    areaServed: { "@type": "City", name: area.nama },
+    serviceType: "Sedot WC & Sanitasi",
+    offers: { "@type": "Offer", priceCurrency: "IDR", price: "300000" },
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
       <MiniHero
         title={`Jasa Sedot WC ${area.nama}`}
         subtitle="Cepat, Bersih & Terpercaya"

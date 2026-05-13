@@ -6,12 +6,22 @@ import ServiceCard from "@/components/shared/ServiceCard"
 import CTABannerWA from "@/components/shared/CTABannerWA"
 import FaqAccordion from "@/components/shared/FaqAccordion"
 import { layananList } from "@/data/layanan"
-import { getWALink } from "@/lib/constants"
+import { getWALink, SITE_URL } from "@/lib/constants"
 
 export const metadata: Metadata = {
-  title: "Layanan Kami",
+  title: "Layanan Sedot WC Jabodetabek — Lengkap & Profesional",
   description:
-    "Lengkap! Layanan sedot WC, septic tank, IPAL, grease trap, sumur bor, dan penanganan darurat 24 jam se-Jabodetabek. Harga transparan, bergaransi.",
+    "Layanan sedot WC, septic tank, IPAL, grease trap, sumur bor, dan penanganan darurat 24 jam se-Jabodetabek. Harga transparan mulai Rp 250.000, bergaransi.",
+  alternates: { canonical: `${SITE_URL}/layanan` },
+  openGraph: {
+    title: "Layanan Sedot WC Jabodetabek — Lengkap & Profesional",
+    description: "Layanan sedot WC, septic tank, IPAL, grease trap, sumur bor, dan penanganan darurat 24 jam. Mulai Rp 250.000, bergaransi.",
+    url: `${SITE_URL}/layanan`,
+  },
+  twitter: {
+    title: "Layanan Sedot WC Jabodetabek — Lengkap & Profesional",
+    description: "Layanan sedot WC, septic tank, IPAL, grease trap, sumur bor, dan penanganan darurat 24 jam. Mulai Rp 250.000, bergaransi.",
+  },
 }
 
 const faqs = [

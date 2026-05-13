@@ -3,11 +3,21 @@ import Image from "next/image"
 import { Shield, Award, Leaf, BadgeCheck, Users, Clock, Truck, Star } from "lucide-react"
 import MiniHero from "@/components/shared/MiniHero"
 import CTABannerWA from "@/components/shared/CTABannerWA"
-import { COMPANY } from "@/lib/constants"
+import { COMPANY, SITE_URL } from "@/lib/constants"
 
 export const metadata: Metadata = {
-  title: "Tentang Kami",
+  title: `Tentang ${COMPANY.name} — Jasa Sedot WC Sejak ${COMPANY.established}`,
   description: `Kenali lebih dekat ${COMPANY.name}. Berdiri sejak ${COMPANY.established}, kami telah melayani ${COMPANY.totalCustomers} pelanggan dengan armada lengkap dan teknisi berpengalaman di Jabodetabek.`,
+  alternates: { canonical: `${SITE_URL}/tentang-kami` },
+  openGraph: {
+    title: `Tentang ${COMPANY.name} — Jasa Sedot WC Sejak ${COMPANY.established}`,
+    description: `Berdiri sejak ${COMPANY.established}, melayani ${COMPANY.totalCustomers} pelanggan se-Jabodetabek. Armada lengkap, teknisi bersertifikat, bergaransi.`,
+    url: `${SITE_URL}/tentang-kami`,
+  },
+  twitter: {
+    title: `Tentang ${COMPANY.name} — Jasa Sedot WC Sejak ${COMPANY.established}`,
+    description: `Berdiri sejak ${COMPANY.established}, melayani ${COMPANY.totalCustomers} pelanggan se-Jabodetabek. Armada lengkap, teknisi bersertifikat, bergaransi.`,
+  },
 }
 
 const tim = [

@@ -5,10 +5,22 @@ import MiniHero from "@/components/shared/MiniHero"
 import CTABannerWA from "@/components/shared/CTABannerWA"
 import { areaList } from "@/data/area"
 
+import { SITE_URL } from "@/lib/constants"
+
 export const metadata: Metadata = {
-  title: "Area Layanan Jabodetabek",
+  title: "Area Layanan Sedot WC Jabodetabek — Jakarta, Bekasi, Depok, Tangerang, Bogor",
   description:
-    "Kami melayani seluruh wilayah Jabodetabek: Jakarta, Bekasi, Depok, Tangerang, dan Bogor. Cek area layanan kami di sini.",
+    "Jasa sedot WC melayani seluruh Jabodetabek: Jakarta Selatan, Jakarta Utara, Jakarta Timur, Jakarta Barat, Bekasi, Depok, Tangerang, dan Bogor. Respon cepat ke lokasi Anda.",
+  alternates: { canonical: `${SITE_URL}/area-layanan` },
+  openGraph: {
+    title: "Area Layanan Sedot WC Jabodetabek — Semua Kota & Kabupaten",
+    description: "Melayani seluruh Jabodetabek: Jakarta, Bekasi, Depok, Tangerang, dan Bogor. Respon cepat, teknisi profesional.",
+    url: `${SITE_URL}/area-layanan`,
+  },
+  twitter: {
+    title: "Area Layanan Sedot WC Jabodetabek — Semua Kota & Kabupaten",
+    description: "Melayani seluruh Jabodetabek: Jakarta, Bekasi, Depok, Tangerang, dan Bogor. Respon cepat, teknisi profesional.",
+  },
 }
 
 export default function AreaLayananPage() {

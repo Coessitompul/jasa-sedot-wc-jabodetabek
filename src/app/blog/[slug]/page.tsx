@@ -7,7 +7,7 @@ import BlogCard from "@/components/shared/BlogCard"
 import ShareButton from "@/components/shared/ShareButton"
 import WAIcon from "@/components/shared/WAIcon"
 import { blogList } from "@/data/blog"
-import { getWALink } from "@/lib/constants"
+import { getWALink, COMPANY, SITE_URL } from "@/lib/constants"
 
 export async function generateStaticParams() {
   return blogList.map((post) => ({ slug: post.slug }))
@@ -24,6 +24,23 @@ export async function generateMetadata({
   return {
     title: post.judul,
     description: post.excerpt,
+    alternates: { canonical: `${SITE_URL}/blog/${post.slug}` },
+    openGraph: {
+      type: "article",
+      title: post.judul,
+      description: post.excerpt,
+      url: `${SITE_URL}/blog/${post.slug}`,
+      images: [{ url: post.thumbnail, width: 800, height: 450, alt: post.judul }],
+      publishedTime: post.tanggal,
+      authors: [COMPANY.name],
+      section: post.kategori,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.judul,
+      description: post.excerpt,
+      images: [post.thumbnail],
+    },
   }
 }
 
@@ -124,7 +141,39 @@ export default async function BlogDetailPage({
 
   const related = blogList.filter((p) => p.slug !== slug).slice(0, 3)
 
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.judul,
+    description: post.excerpt,
+    image: post.thumbnail,
+    datePublished: post.tanggal,
+    dateModified: post.tanggal,
+    author: { "@type": "Organization", name: COMPANY.name, url: SITE_URL },
+    publisher: {
+      "@type": "Organization",
+      name: COMPANY.name,
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-tab.svg` },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
+    articleSection: post.kategori,
+    inLanguage: "id-ID",
+  }
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Beranda", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog",    item: `${SITE_URL}/blog` },
+      { "@type": "ListItem", position: 3, name: post.judul, item: `${SITE_URL}/blog/${post.slug}` },
+    ],
+  }
+
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
     <div className="bg-slate-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Breadcrumb */}
@@ -235,5 +284,6 @@ export default async function BlogDetailPage({
         </div>
       </div>
     </div>
+    </>
   )
 }
