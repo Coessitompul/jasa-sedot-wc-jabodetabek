@@ -19,6 +19,9 @@ const nunito = Nunito({
 })
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/logo-tab.svg",
+  },
   title: {
     template: `%s | ${COMPANY.name}`,
     default: `${COMPANY.name} - Jasa Sedot WC Profesional Jabodetabek`,

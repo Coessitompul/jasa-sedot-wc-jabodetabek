@@ -120,16 +120,16 @@ export default function Footer() {
 
         <div className="border-t border-navy-light mt-8 md:mt-12 pt-6 md:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4">
           <p className="text-slate-400 text-sm text-center sm:text-left">
-            © 2025 {COMPANY.name}. All rights reserved.
+            © 2026 {COMPANY.name}. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             <a href={getWALink()} className="text-slate-400 text-sm hover:text-white transition-colors">
               Kebijakan Privasi
             </a>
             <a href={getWALink()} className="text-slate-400 text-sm hover:text-white transition-colors">
               Syarat & Ketentuan
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

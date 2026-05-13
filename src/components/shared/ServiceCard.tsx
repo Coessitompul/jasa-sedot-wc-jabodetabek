@@ -10,9 +10,15 @@ type Props = {
   poin: string[]
   harga: string
   variant?: "compact" | "full"
+  area?: string
 }
 
-export default function ServiceCard({ slug, icon: Icon, nama, deskripsi, poin, harga, variant = "compact" }: Props) {
+export default function ServiceCard({ slug, icon: Icon, nama, deskripsi, poin, harga, variant = "compact", area }: Props) {
+  const waLink = getWALink(
+    area
+      ? `Halo, saya butuh jasa ${nama} di daerah ${area}`
+      : `Halo, saya butuh jasa ${nama}`
+  )
   if (variant === "full") {
     return (
       <div id={slug} className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow p-5 md:p-8 flex flex-col">
@@ -36,7 +42,7 @@ export default function ServiceCard({ slug, icon: Icon, nama, deskripsi, poin, h
         </ul>
         <div className="mt-auto">
           <a
-            href={getWALink(`Halo, saya butuh jasa ${nama}`)}
+            href={waLink}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 bg-wa text-white px-6 py-3 rounded-xl font-semibold hover:bg-wa-dark transition-colors"
@@ -59,7 +65,7 @@ export default function ServiceCard({ slug, icon: Icon, nama, deskripsi, poin, h
       <p className="text-brand-orange font-bold text-sm mb-4">{harga}</p>
       <div className="mt-auto">
         <a
-          href={getWALink(`Halo, saya butuh jasa ${nama}`)}
+          href={waLink}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 bg-wa text-white px-4 py-2.5 rounded-xl text-sm font-semibold hover:bg-wa-dark transition-colors"

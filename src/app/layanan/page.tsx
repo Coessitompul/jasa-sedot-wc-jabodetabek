@@ -4,6 +4,7 @@ import WAIcon from "@/components/shared/WAIcon"
 import MiniHero from "@/components/shared/MiniHero"
 import ServiceCard from "@/components/shared/ServiceCard"
 import CTABannerWA from "@/components/shared/CTABannerWA"
+import FaqAccordion from "@/components/shared/FaqAccordion"
 import { layananList } from "@/data/layanan"
 import { getWALink } from "@/lib/constants"
 
@@ -142,14 +143,7 @@ export default function LayananPage() {
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl font-bold text-navy">Pertanyaan Umum</h2>
           </div>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="bg-white rounded-2xl p-6 shadow-sm">
-                <h3 className="font-display font-bold text-navy mb-2">{faq.q}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion items={faqs} />
         </div>
       </section>
 

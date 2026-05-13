@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
 import WAIcon from "@/components/shared/WAIcon"
 import MiniHero from "@/components/shared/MiniHero"
+import FaqAccordion from "@/components/shared/FaqAccordion"
 import { COMPANY, getWALink } from "@/lib/constants"
 import { layananList } from "@/data/layanan"
 
@@ -213,14 +214,7 @@ export default function KontakPage() {
       <section className="py-16 bg-slate-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-2xl font-bold text-navy mb-8 text-center">Pertanyaan Umum</h2>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="bg-white rounded-2xl p-6 shadow-sm">
-                <h3 className="font-display font-bold text-navy mb-2 text-sm">{faq.q}</h3>
-                <p className="text-slate-600 text-sm">{faq.a}</p>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion items={faqs} />
         </div>
       </section>
     </>

@@ -1,18 +1,18 @@
 export const COMPANY = {
-  name: "CV. Berkah Jaya Sanitasi",
+  name: "Sedot WC Jabodetabek",
   tagline: "Solusi Sanitasi Profesional Jabodetabek",
-  phone: "0812-3456-7890",
-  phoneTel: "+6281234567890",
-  whatsapp: "6281234567890",
-  email: "info@berkahjayas anitasi.com",
+  phone: "0821-1382-5332",
+  phoneTel: "+6282113825332",
+  whatsapp: "6282113825332",
+  email: "sedotwcjabodetabek@gmail.com",
   address: "Jl. Raya Contoh No. 123, Jakarta Selatan 12560",
   mapsEmbed: "https://maps.google.com/maps?q=Jakarta+Selatan&output=embed",
   established: "2014",
   totalCustomers: "1.200+",
   responseTime: "< 2 Jam",
   rating: "4.9",
-  instagram: "https://instagram.com/berkahjayas anitasi",
-  facebook: "https://facebook.com/berkahjayas anitasi",
+  instagram: "https://instagram.com/sedotwcjabodetabek",
+  facebook: "https://facebook.com/sedotwcjabodetabek",
 }
 
 export function getWALink(pesan?: string) {

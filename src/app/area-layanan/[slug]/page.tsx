@@ -6,6 +6,7 @@ import MiniHero from "@/components/shared/MiniHero"
 import ServiceCard from "@/components/shared/ServiceCard"
 import TestimoniCard from "@/components/shared/TestimoniCard"
 import CTABannerWA from "@/components/shared/CTABannerWA"
+import FaqAccordion from "@/components/shared/FaqAccordion"
 import { areaList } from "@/data/area"
 import { layananList } from "@/data/layanan"
 import { testimoniList } from "@/data/testimoni"
@@ -141,6 +142,7 @@ export default async function AreaDetailPage({
                 deskripsi={layanan.deskripsi}
                 poin={layanan.poin}
                 harga={layanan.harga}
+                area={area.nama}
               />
             ))}
           </div>
@@ -169,14 +171,7 @@ export default async function AreaDetailPage({
           <h2 className="font-display text-2xl font-bold text-navy mb-8">
             FAQ — Jasa Sedot WC {area.nama}
           </h2>
-          <div className="space-y-4">
-            {localFaqs(area.nama).map((faq) => (
-              <div key={faq.q} className="bg-slate-50 rounded-2xl p-6">
-                <h3 className="font-display font-bold text-navy mb-2">{faq.q}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion items={localFaqs(area.nama)} />
         </div>
       </section>
 

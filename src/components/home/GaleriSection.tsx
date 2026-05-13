@@ -3,27 +3,27 @@ import SectionHeader from "@/components/shared/SectionHeader"
 
 const photos = [
   {
-    src: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=400&fit=crop",
+    src: "/webp/img1.webp",
     alt: "Armada vacuum truck sedot WC",
   },
   {
-    src: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=500&fit=crop",
+    src: "/webp/img2.webp",
     alt: "Teknisi bekerja profesional",
   },
   {
-    src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=400&fit=crop",
+    src: "/webp/img3.webp",
     alt: "Peralatan sedot WC modern",
   },
   {
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=500&fit=crop",
+    src: "/webp/img4.webp",
     alt: "Proses pengerjaan sedot septic tank",
   },
   {
-    src: "https://images.unsplash.com/photo-1583246702401-b5f1ee01fbb0?w=600&h=400&fit=crop",
+    src: "/webp/img5.webp",
     alt: "Tim lapangan berseragam",
   },
   {
-    src: "https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=600&h=500&fit=crop",
+    src: "/webp/img6.webp",
     alt: "Hasil pekerjaan bersih dan rapi",
   },
 ]

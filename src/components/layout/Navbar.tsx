@@ -40,11 +40,11 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <div className="w-8 h-8 rounded-lg bg-navy flex items-center justify-center">
-            <span className="text-white font-bold text-sm">BJ</span>
+          <div className="w-10 h-10 rounded-lg bg-navy flex items-center justify-center">
+            <span className="text-white font-bold text-sm">SWJ</span>
           </div>
           <div className="hidden sm:block">
-            <p className="font-display font-bold text-navy text-sm leading-tight">CV. Berkah Jaya</p>
+            <p className="font-display font-bold text-navy text-sm leading-tight">Sedot WC Jabodetabek</p>
             <p className="text-xs text-slate-500 leading-tight">Sanitasi</p>
           </div>
         </Link>

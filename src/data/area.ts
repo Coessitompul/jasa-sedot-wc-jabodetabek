@@ -65,7 +65,7 @@ export const areaList: Area[] = [
 export const areaChip = [
   "Jakarta Pusat", "Jakarta Selatan", "Jakarta Barat", "Jakarta Timur", "Jakarta Utara",
   "Bekasi Kota", "Bekasi Kabupaten", "Depok", "Tangerang Kota", "Tangerang Selatan",
-  "Bogor Kota", "Bogor Kabupaten", "Cikarang", "Karawang", "Serpong",
+  "Bogor Kota", "Bogor Kabupaten",
 ]
 
 export function findAreaSlug(chipName: string): string | null {
