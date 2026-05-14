@@ -12,7 +12,7 @@ export const COMPANY = {
   mapsEmbed: "https://maps.google.com/maps?q=Jakarta+Selatan&output=embed",
   established: "2014",
   totalCustomers: "10.000+",
-  responseTime: "Sangat Cepat",
+  responseTime: "Instan",
   rating: "4.9",
   instagram: "https://instagram.com/sedotwcjabodetabek",
   facebook: "https://facebook.com/sedotwcjabodetabek",
