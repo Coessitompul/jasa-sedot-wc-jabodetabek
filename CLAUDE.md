@@ -12,6 +12,7 @@ Kamu sedang membangun website **jasa sedot WC dan tinja profesional** untuk wila
 Bisnis ini sudah berjalan. Mereka punya: logo, foto tim & armada, nomor WhatsApp aktif, testimoni pelanggan, dan dokumen legalitas (SIUP, NIB).
 
 **Tujuan website:**
+
 - Mendatangkan sebanyak mungkin leads via WhatsApp dan telepon
 - Ranking di Google untuk pencarian lokal Jabodetabek ("sedot wc bekasi", dll)
 - Terlihat terpercaya dan profesional sejak detik pertama
@@ -45,23 +46,23 @@ Bisnis ini sudah berjalan. Mereka punya: logo, foto tim & armada, nomor WhatsApp
 ## FILE KONFIGURASI
 
 ### `next.config.ts`
+
 ```ts
-import type { NextConfig } from "next"
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "images.unsplash.com" },
-    ],
+    remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }],
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;
 ```
 
 ### `tailwind.config.ts`
+
 ```ts
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
@@ -85,12 +86,13 @@ const config: Config = {
     },
   },
   plugins: [],
-}
+};
 
-export default config
+export default config;
 ```
 
 ### `src/app/globals.css`
+
 ```css
 @tailwind base;
 @tailwind components;
@@ -103,7 +105,12 @@ export default config
   body {
     font-family: var(--font-nunito), sans-serif;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-plus-jakarta), sans-serif;
   }
 }
@@ -114,6 +121,7 @@ export default config
 ## DATA & CONSTANTS
 
 ### `src/lib/constants.ts`
+
 ```ts
 export const COMPANY = {
   name: "CV. Berkah Jaya Sanitasi",
@@ -126,142 +134,209 @@ export const COMPANY = {
   mapsEmbed: "https://maps.google.com/maps?q=Jakarta+Selatan&output=embed",
   established: "2014",
   totalCustomers: "1.200+",
-  responseTime: "< 2 Jam",
+  responseTime: "Cepat & Sigap",
   rating: "4.9",
   instagram: "https://instagram.com/berkahjayas anitasi",
   facebook: "https://facebook.com/berkahjayas anitasi",
-}
+};
 
 export function getWALink(pesan?: string) {
-  const text = pesan ?? "Halo, saya butuh jasa sedot WC. Bisa dibantu?"
-  return `https://wa.me/${COMPANY.whatsapp}?text=${encodeURIComponent(text)}`
+  const text = pesan ?? "Halo, saya butuh jasa sedot WC. Bisa dibantu?";
+  return `https://wa.me/${COMPANY.whatsapp}?text=${encodeURIComponent(text)}`;
 }
 ```
 
 ### `src/data/layanan.ts`
+
 ```ts
-import { Droplets, Building2, Factory, UtensilsCrossed, Drill, AlertTriangle } from "lucide-react"
+import {
+  Droplets,
+  Building2,
+  Factory,
+  UtensilsCrossed,
+  Drill,
+  AlertTriangle,
+} from "lucide-react";
 
 export const layananList = [
   {
     slug: "sedot-wc",
     icon: Droplets,
     nama: "Sedot WC / Tinja",
-    deskripsi: "Layanan sedot WC rumah tangga dan kost-kostan menggunakan mesin kapasitas tinggi. Proses cepat, bersih, dan tidak mengganggu lingkungan sekitar.",
-    poin: ["Kapasitas tangki besar", "Teknisi berpengalaman", "Tidak bau & bersih", "Bergaransi"],
-    harga: "Mulai Rp 300.000",
+    deskripsi:
+      "Layanan sedot WC rumah tangga dan kost-kostan menggunakan mesin kapasitas tinggi. Proses cepat, bersih, dan tidak mengganggu lingkungan sekitar.",
+    poin: [
+      "Kapasitas tangki besar",
+      "Teknisi berpengalaman",
+      "Tidak bau & bersih",
+      "Bergaransi",
+    ],
+    harga: "Mulai Rp 400.000",
   },
   {
     slug: "sedot-septic-tank",
     icon: Building2,
     nama: "Sedot Septic Tank",
-    deskripsi: "Pengosongan septic tank untuk perumahan, ruko, dan gedung komersial. Dilakukan secara menyeluruh hingga kapasitas septic tank optimal kembali.",
-    poin: ["Semua ukuran septic tank", "Proses higienis", "Laporan kondisi tangki", "Bergaransi"],
+    deskripsi:
+      "Pengosongan septic tank untuk perumahan, ruko, dan gedung komersial. Dilakukan secara menyeluruh hingga kapasitas septic tank optimal kembali.",
+    poin: [
+      "Semua ukuran septic tank",
+      "Proses higienis",
+      "Laporan kondisi tangki",
+      "Bergaransi",
+    ],
     harga: "Mulai Rp 350.000",
   },
   {
     slug: "sedot-ipal",
     icon: Factory,
     nama: "Sedot IPAL",
-    deskripsi: "Layanan sedot dan perawatan Instalasi Pengolahan Air Limbah (IPAL) untuk industri, hotel, rumah sakit, dan kompleks perumahan besar.",
-    poin: ["Sesuai standar lingkungan", "Teknisi bersertifikat", "Laporan resmi", "Jadwal berkala"],
+    deskripsi:
+      "Layanan sedot dan perawatan Instalasi Pengolahan Air Limbah (IPAL) untuk industri, hotel, rumah sakit, dan kompleks perumahan besar.",
+    poin: [
+      "Sesuai standar lingkungan",
+      "Teknisi bersertifikat",
+      "Laporan resmi",
+      "Jadwal berkala",
+    ],
     harga: "Mulai Rp 500.000",
   },
   {
     slug: "sedot-grease-trap",
     icon: UtensilsCrossed,
     nama: "Sedot Grease Trap",
-    deskripsi: "Pembersihan dan pengosongan grease trap / perangkap lemak untuk restoran, hotel, catering, dan dapur industri agar saluran tidak tersumbat.",
-    poin: ["Cocok untuk F&B & restoran", "Mencegah penyumbatan", "Jadwal rutin tersedia", "Bergaransi"],
-    harga: "Mulai Rp 400.000",
+    deskripsi:
+      "Pembersihan dan pengosongan grease trap / perangkap lemak untuk restoran, hotel, catering, dan dapur industri agar saluran tidak tersumbat.",
+    poin: [
+      "Cocok untuk F&B & restoran",
+      "Mencegah penyumbatan",
+      "Jadwal rutin tersedia",
+      "Bergaransi",
+    ],
+    harga: "Mulai Rp 800.000",
   },
   {
     slug: "sedot-sumur",
     icon: Drill,
     nama: "Sedot Sumur Bor",
-    deskripsi: "Pengosongan dan pembersihan sumur bor yang sudah keruh atau tersumbat lumpur agar debit dan kualitas air kembali optimal.",
-    poin: ["Mesin pompa kapasitas besar", "Pembersihan lumpur total", "Cek kualitas air", "Bergaransi"],
+    deskripsi:
+      "Pengosongan dan pembersihan sumur bor yang sudah keruh atau tersumbat lumpur agar debit dan kualitas air kembali optimal.",
+    poin: [
+      "Mesin pompa kapasitas besar",
+      "Pembersihan lumpur total",
+      "Cek kualitas air",
+      "Bergaransi",
+    ],
     harga: "Mulai Rp 250.000",
   },
   {
     slug: "darurat",
     icon: AlertTriangle,
     nama: "Penanganan Darurat",
-    deskripsi: "Layanan prioritas 24 jam untuk kondisi darurat seperti WC meluap, saluran tersumbat parah, atau bau tidak tertahankan. Tim kami siap hadir dalam 1 jam.",
-    poin: ["Respon 1 jam", "Tersedia 24/7 termasuk hari libur", "Tim siaga khusus darurat", "Penanganan cepat & tuntas"],
+    deskripsi:
+      "Layanan prioritas 24 jam untuk kondisi darurat seperti WC meluap, saluran tersumbat parah, atau bau tidak tertahankan. Tim kami siap hadir dalam 1 jam.",
+    poin: [
+      "Respon 1 jam",
+      "Tersedia 24/7 termasuk hari libur",
+      "Tim siaga khusus darurat",
+      "Penanganan cepat & tuntas",
+    ],
     harga: "Hubungi Kami",
   },
-]
+];
 ```
 
 ### `src/data/area.ts`
+
 ```ts
 export const areaList = [
   {
     slug: "jakarta-selatan",
     nama: "Jakarta Selatan",
-    deskripsi: "Melayani seluruh kecamatan di Jakarta Selatan: Kebayoran Baru, Cilandak, Pasar Minggu, Mampang, Tebet, dan sekitarnya.",
+    deskripsi:
+      "Melayani seluruh kecamatan di Jakarta Selatan: Kebayoran Baru, Cilandak, Pasar Minggu, Mampang, Tebet, dan sekitarnya.",
     keyword: "jasa sedot wc jakarta selatan",
   },
   {
     slug: "jakarta-pusat",
     nama: "Jakarta Pusat",
-    deskripsi: "Melayani area Jakarta Pusat: Menteng, Gambir, Senen, Cempaka Putih, Johar Baru, dan sekitarnya.",
+    deskripsi:
+      "Melayani area Jakarta Pusat: Menteng, Gambir, Senen, Cempaka Putih, Johar Baru, dan sekitarnya.",
     keyword: "jasa sedot wc jakarta pusat",
   },
   {
     slug: "jakarta-barat",
     nama: "Jakarta Barat",
-    deskripsi: "Melayani wilayah Jakarta Barat: Grogol, Kebon Jeruk, Cengkareng, Tambora, Kembangan, dan sekitarnya.",
+    deskripsi:
+      "Melayani wilayah Jakarta Barat: Grogol, Kebon Jeruk, Cengkareng, Tambora, Kembangan, dan sekitarnya.",
     keyword: "jasa sedot wc jakarta barat",
   },
   {
     slug: "jakarta-timur",
     nama: "Jakarta Timur",
-    deskripsi: "Melayani area Jakarta Timur: Cakung, Duren Sawit, Jatinegara, Kramat Jati, Matraman, dan sekitarnya.",
+    deskripsi:
+      "Melayani area Jakarta Timur: Cakung, Duren Sawit, Jatinegara, Kramat Jati, Matraman, dan sekitarnya.",
     keyword: "jasa sedot wc jakarta timur",
   },
   {
     slug: "jakarta-utara",
     nama: "Jakarta Utara",
-    deskripsi: "Melayani wilayah Jakarta Utara: Penjaringan, Pluit, Tanjung Priok, Kelapa Gading, Cilincing, dan sekitarnya.",
+    deskripsi:
+      "Melayani wilayah Jakarta Utara: Penjaringan, Pluit, Tanjung Priok, Kelapa Gading, Cilincing, dan sekitarnya.",
     keyword: "jasa sedot wc jakarta utara",
   },
   {
     slug: "bekasi",
     nama: "Bekasi",
-    deskripsi: "Melayani Bekasi Kota dan Bekasi Kabupaten: Bekasi Timur, Bekasi Barat, Bekasi Utara, Bekasi Selatan, Tambun, Cikarang, dan sekitarnya.",
+    deskripsi:
+      "Melayani Bekasi Kota dan Bekasi Kabupaten: Bekasi Timur, Bekasi Barat, Bekasi Utara, Bekasi Selatan, Tambun, Cikarang, dan sekitarnya.",
     keyword: "jasa sedot wc bekasi",
   },
   {
     slug: "depok",
     nama: "Depok",
-    deskripsi: "Melayani seluruh Kota Depok: Beji, Pancoran Mas, Sukmajaya, Cilodong, Cimanggis, Sawangan, dan sekitarnya.",
+    deskripsi:
+      "Melayani seluruh Kota Depok: Beji, Pancoran Mas, Sukmajaya, Cilodong, Cimanggis, Sawangan, dan sekitarnya.",
     keyword: "jasa sedot wc depok",
   },
   {
     slug: "tangerang",
     nama: "Tangerang",
-    deskripsi: "Melayani Kota Tangerang dan Tangerang Selatan: Serpong, Ciputat, Pamulang, Bintaro, Alam Sutera, dan sekitarnya.",
+    deskripsi:
+      "Melayani Kota Tangerang dan Tangerang Selatan: Serpong, Ciputat, Pamulang, Bintaro, Alam Sutera, dan sekitarnya.",
     keyword: "jasa sedot wc tangerang",
   },
   {
     slug: "bogor",
     nama: "Bogor",
-    deskripsi: "Melayani Kota Bogor dan Kabupaten Bogor: Bogor Tengah, Bogor Selatan, Cibinong, Citereup, Parung, dan sekitarnya.",
+    deskripsi:
+      "Melayani Kota Bogor dan Kabupaten Bogor: Bogor Tengah, Bogor Selatan, Cibinong, Citereup, Parung, dan sekitarnya.",
     keyword: "jasa sedot wc bogor",
   },
-]
+];
 
 // Kota tambahan untuk grid pill di homepage (tidak punya halaman detail)
 export const areaChip = [
-  "Jakarta Pusat", "Jakarta Selatan", "Jakarta Barat", "Jakarta Timur", "Jakarta Utara",
-  "Bekasi Kota", "Bekasi Kabupaten", "Depok", "Tangerang Kota", "Tangerang Selatan",
-  "Bogor Kota", "Bogor Kabupaten", "Cikarang", "Karawang", "Serpong",
-]
+  "Jakarta Pusat",
+  "Jakarta Selatan",
+  "Jakarta Barat",
+  "Jakarta Timur",
+  "Jakarta Utara",
+  "Bekasi Kota",
+  "Bekasi Kabupaten",
+  "Depok",
+  "Tangerang Kota",
+  "Tangerang Selatan",
+  "Bogor Kota",
+  "Bogor Kabupaten",
+  "Cikarang",
+  "Karawang",
+  "Serpong",
+];
 ```
 
 ### `src/data/testimoni.ts`
+
 ```ts
 export const testimoniList = [
   {
@@ -269,68 +344,77 @@ export const testimoniList = [
     kota: "Bekasi",
     rating: 5,
     teks: "Proses cepat dan bersih banget, petugas ramah dan profesional. Baru 1 jam telepon langsung datang. Recommended banget buat warga Bekasi!",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+    avatar:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
   },
   {
     nama: "Siti Rahayu",
     kota: "Jakarta Selatan",
     rating: 5,
     teks: "Sudah 2x pakai jasa ini, selalu puas. Harga transparan, tidak ada biaya kejutan. WC rumah jadi lancar lagi, terima kasih!",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+    avatar:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
   },
   {
     nama: "Ahmad Fauzi",
     kota: "Depok",
     rating: 5,
     teks: "Septic tank saya sudah 5 tahun tidak dikuras, akhirnya ambil jasa ini. Prosesnya profesional, tim pakai APD lengkap, lingkungan tetap bersih.",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+    avatar:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
   },
   {
     nama: "Dewi Lestari",
     kota: "Tangerang",
     rating: 5,
     teks: "Emergency call jam 10 malam, eh langsung direspon dan tim datang dalam 1 jam lebih. Luar biasa pelayanannya, WC mampet langsung beres!",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
+    avatar:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
   },
   {
     nama: "Hendra Wijaya",
     kota: "Bogor",
     rating: 5,
     teks: "Pertama kali pakai langsung kena! Harga sesuai yang diinfokan via WA, tidak ada tambahan biaya. Teknisi juga kasih saran supaya tidak mampet lagi.",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop",
+    avatar:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop",
   },
   {
     nama: "Rina Marlina",
     kota: "Jakarta Timur",
     rating: 5,
     teks: "Grease trap restoran saya dibersihkan sama tim ini, hasilnya memuaskan. Aroma dapur jadi lebih segar. Pasti repeat order!",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop",
+    avatar:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop",
   },
-]
+];
 ```
 
 ### `src/data/blog.ts`
+
 ```ts
 export type BlogPost = {
-  slug: string
-  judul: string
-  excerpt: string
-  kategori: string
-  tanggal: string
-  estimasiBaca: string
-  thumbnail: string
-  konten: string
-}
+  slug: string;
+  judul: string;
+  excerpt: string;
+  kategori: string;
+  tanggal: string;
+  estimasiBaca: string;
+  thumbnail: string;
+  konten: string;
+};
 
 export const blogList: BlogPost[] = [
   {
     slug: "biaya-sedot-wc-jakarta",
     judul: "Berapa Biaya Sedot WC di Jakarta? Ini Rincian Lengkapnya",
-    excerpt: "Penasaran berapa biaya sedot WC di Jakarta? Simak rincian harga lengkap berdasarkan jenis layanan, ukuran tangki, dan jarak lokasi.",
+    excerpt:
+      "Penasaran berapa biaya sedot WC di Jakarta? Simak rincian harga lengkap berdasarkan jenis layanan, ukuran tangki, dan jarak lokasi.",
     kategori: "Harga & Biaya",
     tanggal: "10 Januari 2025",
     estimasiBaca: "5 menit",
-    thumbnail: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=450&fit=crop",
+    thumbnail:
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=450&fit=crop",
     konten: `
 ## Biaya Sedot WC di Jakarta: Panduan Lengkap 2025
 
@@ -366,11 +450,13 @@ Untuk informasi harga terkini, hubungi kami via WhatsApp dan dapatkan estimasi b
   {
     slug: "tanda-wc-mampet",
     judul: "7 Tanda WC Harus Segera Disedot Sebelum Meluap",
-    excerpt: "Jangan tunggu WC meluap! Kenali 7 tanda peringatan bahwa septic tank atau saluran WC Anda sudah harus segera ditangani.",
+    excerpt:
+      "Jangan tunggu WC meluap! Kenali 7 tanda peringatan bahwa septic tank atau saluran WC Anda sudah harus segera ditangani.",
     kategori: "Tips WC",
     tanggal: "5 Februari 2025",
     estimasiBaca: "4 menit",
-    thumbnail: "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?w=800&h=450&fit=crop",
+    thumbnail:
+      "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?w=800&h=450&fit=crop",
     konten: `
 ## 7 Tanda WC Harus Segera Disedot
 
@@ -403,11 +489,13 @@ Jika Anda mengalami satu atau lebih tanda di atas, segera hubungi tim kami sebel
   {
     slug: "cara-merawat-septic-tank",
     judul: "Panduan Merawat Septic Tank agar Tahan Lama",
-    excerpt: "Septic tank yang terawat bisa bertahan puluhan tahun. Pelajari cara perawatan yang benar agar tidak cepat penuh dan tidak bermasalah.",
+    excerpt:
+      "Septic tank yang terawat bisa bertahan puluhan tahun. Pelajari cara perawatan yang benar agar tidak cepat penuh dan tidak bermasalah.",
     kategori: "Edukasi",
     tanggal: "20 Februari 2025",
     estimasiBaca: "6 menit",
-    thumbnail: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=450&fit=crop",
+    thumbnail:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=450&fit=crop",
     konten: `
 ## Panduan Lengkap Merawat Septic Tank
 
@@ -444,11 +532,13 @@ Hubungi kami untuk jadwal perawatan berkala dengan harga spesial pelanggan setia
   {
     slug: "sedot-wc-vs-manual",
     judul: "Perbedaan Sedot WC Manual vs Mesin Modern",
-    excerpt: "Masih bingung pilih sedot WC manual atau pakai mesin? Ketahui perbedaan, kelebihan, dan kekurangan masing-masing metode di sini.",
+    excerpt:
+      "Masih bingung pilih sedot WC manual atau pakai mesin? Ketahui perbedaan, kelebihan, dan kekurangan masing-masing metode di sini.",
     kategori: "Edukasi",
     tanggal: "1 Maret 2025",
     estimasiBaca: "5 menit",
-    thumbnail: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=450&fit=crop",
+    thumbnail:
+      "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=450&fit=crop",
     konten: `
 ## Sedot WC Manual vs Mesin Modern: Mana yang Lebih Baik?
 
@@ -493,11 +583,13 @@ Semua layanan kami menggunakan vacuum truck modern berkapasitas besar untuk hasi
   {
     slug: "tips-wc-tidak-bau",
     judul: "5 Tips Ampuh Agar WC Rumah Tidak Bau",
-    excerpt: "WC bau bisa merusak kenyamanan rumah dan membuat tamu tidak nyaman. Ikuti 5 tips ini untuk menjaga WC tetap segar sepanjang hari.",
+    excerpt:
+      "WC bau bisa merusak kenyamanan rumah dan membuat tamu tidak nyaman. Ikuti 5 tips ini untuk menjaga WC tetap segar sepanjang hari.",
     kategori: "Tips WC",
     tanggal: "15 Maret 2025",
     estimasiBaca: "3 menit",
-    thumbnail: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=450&fit=crop",
+    thumbnail:
+      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=450&fit=crop",
     konten: `
 ## 5 Tips Ampuh Agar WC Rumah Tidak Bau
 
@@ -524,11 +616,13 @@ Kalau bau sudah tidak bisa diatasi dengan cara di atas, hubungi kami untuk inspe
   {
     slug: "frekuensi-sedot-septic-tank",
     judul: "Seberapa Sering Septic Tank Harus Disedot?",
-    excerpt: "Tidak ada jawaban tunggal untuk pertanyaan ini. Frekuensi penyedotan ideal tergantung pada ukuran tangki, jumlah penghuni, dan pola penggunaan.",
+    excerpt:
+      "Tidak ada jawaban tunggal untuk pertanyaan ini. Frekuensi penyedotan ideal tergantung pada ukuran tangki, jumlah penghuni, dan pola penggunaan.",
     kategori: "Edukasi",
     tanggal: "1 April 2025",
     estimasiBaca: "4 menit",
-    thumbnail: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=450&fit=crop",
+    thumbnail:
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=450&fit=crop",
     konten: `
 ## Seberapa Sering Septic Tank Harus Disedot?
 
@@ -567,7 +661,7 @@ Tangki tua yang sudah retak atau tidak kedap mungkin perlu lebih sering diperiks
 Jika tidak yakin, hubungi kami untuk inspeksi gratis dan rekomendasi jadwal yang tepat untuk kondisi spesifik Anda.
     `,
   },
-]
+];
 ```
 
 ---
@@ -641,52 +735,67 @@ Buat semua file berikut sesuai urutan:
 ## ROOT LAYOUT: `src/app/layout.tsx`
 
 ```tsx
-import type { Metadata } from "next"
-import { Plus_Jakarta_Sans, Nunito } from "next/font/google"
-import "./globals.css"
-import Navbar from "@/components/layout/Navbar"
-import Footer from "@/components/layout/Footer"
-import FloatingWA from "@/components/layout/FloatingWA"
-import { COMPANY } from "@/lib/constants"
+import type { Metadata } from "next";
+import { Plus_Jakarta_Sans, Nunito } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import FloatingWA from "@/components/layout/FloatingWA";
+import { COMPANY } from "@/lib/constants";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta",
   weight: ["400", "600", "700", "800"],
-})
+});
 
 const nunito = Nunito({
   subsets: ["latin"],
   variable: "--font-nunito",
   weight: ["400", "600", "700"],
-})
+});
 
 export const metadata: Metadata = {
   title: {
     template: `%s | ${COMPANY.name}`,
     default: `${COMPANY.name} - Jasa Sedot WC Profesional Jabodetabek`,
   },
-  description: "Jasa sedot WC & tinja profesional se-Jabodetabek. Armada lengkap, teknisi berpengalaman, harga transparan. Melayani 24 jam, respon cepat 1-2 jam.",
-  keywords: ["sedot wc", "jasa tinja", "sedot septic tank", "jabodetabek", "jakarta", "bekasi", "depok", "tangerang", "bogor"],
-}
+  description:
+    "Jasa sedot WC & tinja profesional se-Jabodetabek. Armada lengkap, teknisi berpengalaman, harga transparan. Melayani 24 jam, respon cepat & sigap.",
+  keywords: [
+    "sedot wc",
+    "jasa tinja",
+    "sedot septic tank",
+    "jabodetabek",
+    "jakarta",
+    "bekasi",
+    "depok",
+    "tangerang",
+    "bogor",
+  ],
+};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": COMPANY.name,
-    "description": "Jasa sedot WC profesional Jabodetabek",
-    "telephone": COMPANY.phone,
-    "address": {
+    name: COMPANY.name,
+    description: "Jasa sedot WC profesional Jabodetabek",
+    telephone: COMPANY.phone,
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": COMPANY.address,
-      "addressRegion": "DKI Jakarta",
-      "addressCountry": "ID",
+      streetAddress: COMPANY.address,
+      addressRegion: "DKI Jakarta",
+      addressCountry: "ID",
     },
-    "areaServed": ["Jakarta", "Bekasi", "Depok", "Tangerang", "Bogor"],
-    "openingHours": "Mo-Su 00:00-23:59",
-    "priceRange": "Rp 250.000 - Rp 1.500.000",
-  }
+    areaServed: ["Jakarta", "Bekasi", "Depok", "Tangerang", "Bogor"],
+    openingHours: "Mo-Su 00:00-23:59",
+    priceRange: "Rp 250.000 - Rp 1.500.000",
+  };
 
   return (
     <html lang="id" className={`${plusJakarta.variable} ${nunito.variable}`}>
@@ -703,7 +812,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <FloatingWA />
       </body>
     </html>
-  )
+  );
 }
 ```
 
@@ -717,7 +826,7 @@ Import dan render semua section berikut secara berurutan:
 
 1. **HeroSection** — Background navy + dot pattern. Badge oranye "⚡ Melayani 24 Jam / 7 Hari". H1: "Sedot WC & Tinja Profesional Se-Jabodetabek". Subheadline. 2 CTA button: (1) oranye "💬 Chat WhatsApp Sekarang" → `getWALink()`, (2) outline putih "📞 Telepon Langsung" → `tel:${COMPANY.phoneTel}`. Trust badges row: ✅ Bergaransi | ✅ 10+ Tahun | ✅ Harga Transparan | ✅ Respon Cepat. Kanan hero: placeholder image Unsplash
 
-2. **StatsBar** — Background oranye. 4 stat: "1.200+" Pelanggan | "10+" Tahun Pengalaman | "< 2 Jam" Respon | "4.9★" Rating
+2. **StatsBar** — Background oranye. 4 stat: "1.200+" Pelanggan | "10+" Tahun Pengalaman | "Cepat & Sigap" Respon | "4.9★" Rating
 
 3. **KeunggulanSection** — "Kenapa Pilih Kami?" Grid 3 kolom 6 card: Layanan 24 Jam, Harga Transparan, Respon Cepat, Berizin Resmi, Peralatan Modern, Bergaransi. Tiap card pakai ikon Lucide relevan
 
@@ -776,7 +885,7 @@ export async function generateMetadata({ params }) {
   const area = areaList.find((a) => a.slug === params.slug)
   return {
     title: `Jasa Sedot WC ${area.nama}`,
-    description: `Jasa sedot WC profesional di ${area.nama}. Melayani 24 jam, respon cepat 1-2 jam. Harga transparan, bergaransi. Hubungi sekarang!`,
+    description: `Jasa sedot WC profesional di ${area.nama}. Melayani 24 jam, respon cepat & sigap. Harga transparan, bergaransi. Hubungi sekarang!`,
   }
 }
 
@@ -942,5 +1051,5 @@ H2 section    → font-display text-3xl md:text-4xl font-bold text-navy
 
 ---
 
-*File ini adalah sumber kebenaran tunggal untuk project ini.*
-*Semua keputusan desain, struktur, dan konten mengacu ke dokumen ini.*
+_File ini adalah sumber kebenaran tunggal untuk project ini._
+_Semua keputusan desain, struktur, dan konten mengacu ke dokumen ini._
