@@ -16,15 +16,7 @@ export const layananList: Layanan[] = [
     nama: "Sedot WC / Tinja",
     deskripsi: "Layanan sedot WC rumah tangga dan kost-kostan menggunakan mesin kapasitas tinggi. Proses cepat, bersih, dan tidak mengganggu lingkungan sekitar.",
     poin: ["Kapasitas tangki besar", "Teknisi berpengalaman", "Tidak bau & bersih", "Bergaransi"],
-    harga: "Mulai Rp 300.000",
-  },
-  {
-    slug: "sedot-septic-tank",
-    icon: Building2,
-    nama: "Sedot Septic Tank",
-    deskripsi: "Pengosongan septic tank untuk perumahan, ruko, dan gedung komersial. Dilakukan secara menyeluruh hingga kapasitas septic tank optimal kembali.",
-    poin: ["Semua ukuran septic tank", "Proses higienis", "Laporan kondisi tangki", "Bergaransi"],
-    harga: "Mulai Rp 350.000",
+    harga: "Mulai Rp 400.000",
   },
   {
     slug: "sedot-ipal",
@@ -40,15 +32,7 @@ export const layananList: Layanan[] = [
     nama: "Sedot Grease Trap",
     deskripsi: "Pembersihan dan pengosongan grease trap / perangkap lemak untuk restoran, hotel, catering, dan dapur industri agar saluran tidak tersumbat.",
     poin: ["Cocok untuk F&B & restoran", "Mencegah penyumbatan", "Jadwal rutin tersedia", "Bergaransi"],
-    harga: "Mulai Rp 400.000",
-  },
-  {
-    slug: "sedot-sumur",
-    icon: Drill,
-    nama: "Sedot Sumur Bor",
-    deskripsi: "Pengosongan dan pembersihan sumur bor yang sudah keruh atau tersumbat lumpur agar debit dan kualitas air kembali optimal.",
-    poin: ["Mesin pompa kapasitas besar", "Pembersihan lumpur total", "Cek kualitas air", "Bergaransi"],
-    harga: "Mulai Rp 250.000",
+    harga: "Mulai Rp 800.000",
   },
   {
     slug: "darurat",

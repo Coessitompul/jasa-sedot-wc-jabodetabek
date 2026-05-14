@@ -87,21 +87,6 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Mobile stats */}
-          <div className="lg:hidden grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-            {[
-              { value: COMPANY.totalCustomers, label: "Pelanggan Puas" },
-              { value: "10+",                  label: "Tahun Pengalaman" },
-              { value: COMPANY.responseTime,   label: "Waktu Respon" },
-              { value: `${COMPANY.rating}★`,   label: "Rating" },
-            ].map((s) => (
-              <div key={s.label} className="bg-slate-50 rounded-xl p-3 text-center">
-                <p className="font-display font-bold text-navy text-lg md:text-xl">{s.value}</p>
-                <p className="text-slate-500 text-xs mt-0.5">{s.label}</p>
-              </div>
-            ))}
-          </div>
-
         </div>
       </div>
     </section>

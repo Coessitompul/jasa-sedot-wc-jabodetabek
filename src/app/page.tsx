@@ -7,6 +7,7 @@ import CaraKerjaSection from "@/components/home/CaraKerjaSection"
 import TestimoniSection from "@/components/home/TestimoniSection"
 import GaleriSection from "@/components/home/GaleriSection"
 import LegalitasSection from "@/components/home/LegalitasSection"
+import FaqSection from "@/components/home/FaqSection"
 import CTABanner from "@/components/home/CTABanner"
 
 export default function HomePage() {
@@ -20,7 +21,8 @@ export default function HomePage() {
       <CaraKerjaSection />
       <TestimoniSection />
       <GaleriSection />
-      <LegalitasSection />
+      {/* <LegalitasSection /> */}
+      <FaqSection />
       <CTABanner />
     </>
   )

@@ -78,7 +78,7 @@ export default function TentangKamiPage() {
               </h2>
               <div className="space-y-3 text-slate-600 leading-relaxed text-sm md:text-base">
                 <p>
-                  CV. Berkah Jaya Sanitasi berdiri pada tahun {COMPANY.established} dengan tekad sederhana: memberikan
+                  Sedot WC Jabodetabek berdiri pada tahun {COMPANY.established} dengan tekad sederhana: memberikan
                   layanan sanitasi yang cepat, higienis, dan terjangkau untuk masyarakat Jabodetabek.
                 </p>
                 <p>
@@ -169,7 +169,7 @@ export default function TentangKamiPage() {
       </section>
 
       {/* Legalitas */}
-      <section className="py-12 md:py-16 bg-white">
+      {/* <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="font-display text-2xl md:text-3xl font-bold text-navy">Legalitas & Sertifikasi</h2>
@@ -191,7 +191,7 @@ export default function TentangKamiPage() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Pencapaian */}
       <section className="py-10 md:py-16 bg-brand-orange">

@@ -5,7 +5,7 @@ import AnimateIn from "@/components/shared/AnimateIn"
 const keunggulan = [
   { icon: Clock,      title: "Layanan 24 Jam",      desc: "Kami beroperasi penuh 24 jam sehari, 7 hari seminggu — termasuk hari libur nasional." },
   { icon: DollarSign, title: "Harga Transparan",     desc: "Tidak ada biaya tersembunyi. Estimasi harga diberikan sebelum pengerjaan dimulai." },
-  { icon: Zap,        title: "Respon Cepat",         desc: "Tim kami siap hadir dalam waktu kurang dari 2 jam setelah konfirmasi pemesanan." },
+  { icon: Zap,        title: "Respon Cepat",         desc: "Sesaat setelah konfirmasi, tim kami segera bergegas menuju lokasi Anda." },
   { icon: Shield,     title: "Berizin Resmi",        desc: "Beroperasi dengan SIUP, NIB, dan izin lingkungan resmi dari pemerintah." },
   { icon: Wrench,     title: "Peralatan Modern",     desc: "Menggunakan vacuum truck berkapasitas tinggi dan peralatan sanitasi terkini." },
   { icon: BadgeCheck, title: "Bergaransi",           desc: "Setiap pekerjaan dilengkapi garansi kepuasan. Tidak puas? Kami kembali tanpa biaya tambahan." },
