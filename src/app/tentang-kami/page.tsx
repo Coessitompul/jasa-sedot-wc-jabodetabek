@@ -28,9 +28,18 @@ const tim = [
 ]
 
 const armada = [
-  { src: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=400&fit=crop", alt: "Vacuum truck kapasitas besar" },
-  { src: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop", alt: "Peralatan sedot profesional" },
-  { src: "https://images.unsplash.com/photo-1583246702401-b5f1ee01fbb0?w=600&h=400&fit=crop", alt: "Tim lapangan berseragam" },
+  { 
+    src: "/webp/armada-peralatan-1.webp", 
+    alt: "Vacuum truck kapasitas besar" 
+  },
+  { 
+    src: "/webp/armada-peralatan-2.webp", 
+    alt: "Peralatan sedot profesional" 
+  },
+  { 
+    src: "/webp/armada-peralatan-3.webp", 
+    alt: "Tim lapangan berseragam" 
+  },
 ]
 
 const legalitas = [
@@ -86,8 +95,8 @@ export default function TentangKamiPage() {
             </div>
             <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=700&h=500&fit=crop"
-                alt="Tim CV. Berkah Jaya Sanitasi"
+                src="/webp/hero-image.webp"
+                alt="Sedot WC Jabodetabek"
                 width={700}
                 height={500}
                 className="w-full object-cover"
@@ -122,7 +131,7 @@ export default function TentangKamiPage() {
       </section>
 
       {/* Tim */}
-      <section className="py-12 md:py-16 bg-white">
+      {/* <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="font-display text-2xl md:text-3xl font-bold text-navy">Tim Kami</h2>
@@ -140,7 +149,7 @@ export default function TentangKamiPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Armada */}
       <section className="py-12 md:py-16 bg-slate-50">
@@ -186,15 +195,17 @@ export default function TentangKamiPage() {
 
       {/* Pencapaian */}
       <section className="py-10 md:py-16 bg-brand-orange">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {pencapaian.map((p) => {
               const Icon = p.icon
               return (
-                <div key={p.label} className="text-center">
-                  <Icon className="w-6 h-6 md:w-8 md:h-8 text-white/80 mx-auto mb-1.5 md:mb-2" />
-                  <p className="font-display text-2xl md:text-4xl font-bold text-white">{p.value}</p>
-                  <p className="text-orange-100 text-xs md:text-sm mt-0.5 md:mt-1">{p.label}</p>
+                <div key={p.label} className="flex flex-col items-center text-center bg-white/15 backdrop-blur-sm border border-white/20 rounded-2xl px-4 py-6 md:py-8">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 flex items-center justify-center mb-3 md:mb-4">
+                    <Icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  </div>
+                  <p className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">{p.value}</p>
+                  <p className="text-orange-100 text-xs md:text-sm mt-1.5 uppercase tracking-wide font-medium">{p.label}</p>
                 </div>
               )
             })}

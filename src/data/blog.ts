@@ -17,8 +17,8 @@ export const blogList: BlogPost[] = [
     kategori: "Harga & Biaya",
     tanggal: "10 Januari 2025",
     estimasiBaca: "5 menit",
-    thumbnail: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=450&fit=crop",
-    konten: `## Biaya Sedot WC di Jakarta: Panduan Lengkap 2025
+    thumbnail: "/images/prices.jpg",
+    konten: `## Biaya Sedot WC di Jakarta: Panduan Lengkap
 
 Banyak warga Jakarta yang belum tahu berapa biaya wajar untuk jasa sedot WC. Artikel ini membahas rincian harga secara transparan agar Anda tidak terkejut saat tagihan datang.
 
@@ -55,7 +55,7 @@ Untuk informasi harga terkini, hubungi kami via WhatsApp dan dapatkan estimasi b
     kategori: "Tips WC",
     tanggal: "5 Februari 2025",
     estimasiBaca: "4 menit",
-    thumbnail: "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?w=800&h=450&fit=crop",
+    thumbnail: "/images/closet.jpg",
     konten: `## 7 Tanda WC Harus Segera Disedot
 
 Banyak masalah WC yang sebenarnya bisa dicegah jika kita tahu tanda-tandanya sejak dini. Berikut 7 sinyal yang tidak boleh diabaikan.
@@ -90,7 +90,7 @@ Jika Anda mengalami satu atau lebih tanda di atas, segera hubungi tim kami sebel
     kategori: "Edukasi",
     tanggal: "20 Februari 2025",
     estimasiBaca: "6 menit",
-    thumbnail: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=450&fit=crop",
+    thumbnail: "/images/panduan-merawat-septic-tank.jpg",
     konten: `## Panduan Lengkap Merawat Septic Tank
 
 Septic tank yang dirawat dengan baik bisa berfungsi optimal selama puluhan tahun. Sebaliknya, perawatan yang salah bisa memperpendek umurnya dan menyebabkan masalah serius.
@@ -129,7 +129,7 @@ Hubungi kami untuk jadwal perawatan berkala dengan harga spesial pelanggan setia
     kategori: "Edukasi",
     tanggal: "1 Maret 2025",
     estimasiBaca: "5 menit",
-    thumbnail: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=450&fit=crop",
+    thumbnail: "/images/manual-vs-mesin.jpg",
     konten: `## Sedot WC Manual vs Mesin Modern: Mana yang Lebih Baik?
 
 Banyak pelanggan yang bertanya soal perbedaan antara metode manual dan mesin modern. Artikel ini menjelaskannya secara objektif.
@@ -176,7 +176,7 @@ Semua layanan kami menggunakan vacuum truck modern berkapasitas besar untuk hasi
     kategori: "Tips WC",
     tanggal: "15 Maret 2025",
     estimasiBaca: "3 menit",
-    thumbnail: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=450&fit=crop",
+    thumbnail: "/images/tips-agar-wc-tidak-bau.jpg",
     konten: `## 5 Tips Ampuh Agar WC Rumah Tidak Bau
 
 WC yang bau bukan hanya tidak nyaman, tapi juga bisa jadi tanda ada masalah sanitasi yang perlu ditangani. Berikut 5 tips yang bisa langsung Anda praktikkan.
@@ -205,7 +205,7 @@ Kalau bau sudah tidak bisa diatasi dengan cara di atas, hubungi kami untuk inspe
     kategori: "Edukasi",
     tanggal: "1 April 2025",
     estimasiBaca: "4 menit",
-    thumbnail: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=450&fit=crop",
+    thumbnail: "/images/sedot-septic-tank.jpg",
     konten: `## Seberapa Sering Septic Tank Harus Disedot?
 
 Pertanyaan ini sering ditanyakan pelanggan kami. Jawabannya: tergantung beberapa faktor, tapi ada panduan umum yang bisa dijadikan patokan.

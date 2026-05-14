@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
 import { COMPANY, getWALink } from "@/lib/constants"
 import { layananList } from "@/data/layanan"
@@ -11,10 +12,8 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
           {/* Kolom 1: Tentang */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-brand-orange flex items-center justify-center">
-                <span className="text-white font-bold">BJ</span>
-              </div>
+            <div className="flex items-center gap-2 mb-">
+              <Image src="/logo-tab2.svg" alt="Logo" width={100} height={100} className="w-10 h-10" unoptimized />
               <div>
                 <p className="font-display font-bold text-white leading-tight">{COMPANY.name}</p>
               </div>
@@ -120,7 +119,7 @@ export default function Footer() {
 
         <div className="border-t border-navy-light mt-8 md:mt-12 pt-6 md:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4">
           <p className="text-slate-400 text-sm text-center sm:text-left">
-            © 2026 {COMPANY.name}. All rights reserved.
+            © {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
           </p>
           {/* <div className="flex items-center gap-4">
             <a href={getWALink()} className="text-slate-400 text-sm hover:text-white transition-colors">

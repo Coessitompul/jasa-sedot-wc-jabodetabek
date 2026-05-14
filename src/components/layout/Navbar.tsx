@@ -43,7 +43,7 @@ export default function Navbar() {
           <div className="w-10 h-10 rounded-lg bg-navy flex items-center justify-center">
             <span className="text-white font-bold text-sm">SWJ</span>
           </div>
-          <div className="hidden sm:block">
+          <div>
             <p className="font-display font-bold text-navy text-sm leading-tight">Sedot WC Jabodetabek</p>
             <p className="text-xs text-slate-500 leading-tight">Sanitasi</p>
           </div>

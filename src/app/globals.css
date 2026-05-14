@@ -13,6 +13,23 @@
   --font-body: var(--font-nunito), sans-serif;
 }
 
+/* ── Hero on-load animations (no JS needed, above fold) ── */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroFadeRight {
+  from { opacity: 0; transform: translateX(48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.hero-badge  { animation: heroFadeUp    0.5s cubic-bezier(0.4,0,0.2,1) both; }
+.hero-title  { animation: heroFadeUp    0.65s cubic-bezier(0.4,0,0.2,1) 0.1s both; }
+.hero-sub    { animation: heroFadeUp    0.65s cubic-bezier(0.4,0,0.2,1) 0.2s both; }
+.hero-btns   { animation: heroFadeUp    0.65s cubic-bezier(0.4,0,0.2,1) 0.32s both; }
+.hero-trust  { animation: heroFadeUp    0.55s cubic-bezier(0.4,0,0.2,1) 0.44s both; }
+.hero-img    { animation: heroFadeRight 0.75s cubic-bezier(0.4,0,0.2,1) 0.15s both; }
+
 @layer base {
   html {
     scroll-behavior: smooth;

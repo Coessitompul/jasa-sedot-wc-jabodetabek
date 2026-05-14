@@ -1,6 +1,5 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Clock, Calendar } from "lucide-react"
 import type { BlogPost } from "@/data/blog"
 
 type Props = {
@@ -29,17 +28,7 @@ export default function BlogCard({ post }: Props) {
           </h3>
         </Link>
         <p className="text-slate-600 text-sm leading-relaxed line-clamp-2 mb-4">{post.excerpt}</p>
-        <div className="mt-auto flex items-center justify-between">
-          <div className="flex items-center gap-3 text-xs text-slate-400">
-            <span className="flex items-center gap-1">
-              <Calendar className="w-3.5 h-3.5" />
-              {post.tanggal}
-            </span>
-            <span className="flex items-center gap-1">
-              <Clock className="w-3.5 h-3.5" />
-              {post.estimasiBaca}
-            </span>
-          </div>
+        <div className="mt-auto flex justify-end">
           <Link
             href={`/blog/${post.slug}`}
             className="text-sm font-semibold text-brand-orange hover:underline"

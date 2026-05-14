@@ -3,17 +3,11 @@ import { CheckCircle, Zap } from "lucide-react"
 import WAIcon from "@/components/shared/WAIcon"
 import { COMPANY, getWALink } from "@/lib/constants"
 
-const trustBadges = [
-  "Bergaransi",
-  "10+ Tahun",
-  "Harga Transparan",
-  "Respon Cepat",
-]
+const trustBadges = ["Bergaransi", "10+ Tahun", "Harga Transparan", "Respon Cepat"]
 
 export default function HeroSection() {
   return (
     <section className="relative bg-white overflow-hidden">
-      {/* Subtle dot pattern */}
       <div
         className="absolute inset-0 opacity-[0.04]"
         style={{
@@ -24,20 +18,26 @@ export default function HeroSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 lg:py-18">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 items-center">
-          {/* Left */}
+
+          {/* Kiri */}
           <div>
-            <div className="inline-flex items-center gap-2 bg-brand-orange/10 text-brand-orange text-xs md:text-sm font-semibold px-3 md:px-4 py-1.5 md:py-2 rounded-full mb-4 md:mb-6">
+            <div className="hero-badge inline-flex items-center gap-2 bg-brand-orange/10 text-brand-orange text-xs md:text-sm font-semibold px-3 md:px-4 py-1.5 md:py-2 rounded-full mb-4 md:mb-6">
               <Zap className="w-3.5 h-3.5 md:w-4 md:h-4" />
               Melayani 24 Jam / 7 Hari
             </div>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-navy leading-tight mb-4 md:mb-5">
+
+            <h1 className="hero-title font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-navy leading-tight mb-4 md:mb-5">
               WC Mampet? Jangan Panik,{" "}
               <span className="text-brand-orange">Biar Kami yang Beresin!</span>
             </h1>
-            <p className="text-slate-500 text-base md:text-lg leading-relaxed mb-6 md:mb-8 max-w-lg">
-              Sedot WC Jabodetabek tanpa drama harga &ldquo;getok&rdquo;. Teknisi kami profesional, alatnya modern, dan yang pasti datang tepat waktu. Cukup WhatsApp, teknisi meluncur, masalah beres dalam sekejap.
+
+            <p className="hero-sub text-slate-500 text-base md:text-lg leading-relaxed mb-6 md:mb-8 max-w-lg">
+              Sedot WC Jabodetabek tanpa drama harga &ldquo;getok&rdquo;. Teknisi kami profesional,
+              alatnya modern, dan yang pasti datang tepat waktu. Cukup WhatsApp, teknisi meluncur,
+              masalah beres dalam sekejap.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-8">
+
+            <div className="hero-btns flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-8">
               <a
                 href={getWALink()}
                 target="_blank"
@@ -54,8 +54,8 @@ export default function HeroSection() {
                 Layanan Kami
               </a>
             </div>
-            {/* Trust badges */}
-            <div className="flex flex-wrap items-center gap-3 md:gap-4">
+
+            <div className="hero-trust flex flex-wrap items-center gap-3 md:gap-4">
               {trustBadges.map((badge) => (
                 <div key={badge} className="flex items-center gap-1.5 text-xs md:text-sm text-slate-600">
                   <CheckCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-wa shrink-0" />
@@ -65,8 +65,8 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right image — tablet up */}
-          <div className="relative hidden lg:block">
+          {/* Kanan — desktop only */}
+          <div className="hero-img relative hidden lg:block">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src="/webp/hero-image.webp"
@@ -87,13 +87,13 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Tablet: stats row bawah teks */}
+          {/* Mobile stats */}
           <div className="lg:hidden grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
             {[
               { value: COMPANY.totalCustomers, label: "Pelanggan Puas" },
-              { value: "10+", label: "Tahun Pengalaman" },
-              { value: COMPANY.responseTime, label: "Waktu Respon" },
-              { value: `${COMPANY.rating}★`, label: "Rating" },
+              { value: "10+",                  label: "Tahun Pengalaman" },
+              { value: COMPANY.responseTime,   label: "Waktu Respon" },
+              { value: `${COMPANY.rating}★`,   label: "Rating" },
             ].map((s) => (
               <div key={s.label} className="bg-slate-50 rounded-xl p-3 text-center">
                 <p className="font-display font-bold text-navy text-lg md:text-xl">{s.value}</p>
@@ -101,6 +101,7 @@ export default function HeroSection() {
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

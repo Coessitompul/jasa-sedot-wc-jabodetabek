@@ -185,7 +185,7 @@ export default async function BlogDetailPage({
           <span className="text-slate-700 font-medium line-clamp-1">{post.judul}</span>
         </nav>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10">
           {/* Konten artikel */}
           <article className="lg:col-span-2">
             <span className="inline-block bg-navy/10 text-navy text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
@@ -194,14 +194,14 @@ export default async function BlogDetailPage({
             <h1 className="font-display text-3xl md:text-4xl font-bold text-navy mb-4 leading-tight">
               {post.judul}
             </h1>
-            <div className="flex items-center gap-4 text-sm text-slate-500 mb-6">
+            {/* <div className="flex items-center gap-4 text-sm text-slate-500 mb-6">
               <span className="flex items-center gap-1.5">
                 <Calendar className="w-4 h-4" /> {post.tanggal}
               </span>
               <span className="flex items-center gap-1.5">
                 <Clock className="w-4 h-4" /> {post.estimasiBaca}
               </span>
-            </div>
+            </div> */}
 
             <div className="rounded-2xl overflow-hidden mb-8 shadow-md">
               <Image
@@ -264,18 +264,36 @@ export default async function BlogDetailPage({
               </a>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-sm">
-              <h3 className="font-display font-bold text-navy mb-4">Artikel Lainnya</h3>
-              <div className="space-y-4">
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
+              <div className="px-5 py-4 border-b border-slate-100">
+                <h3 className="font-display font-bold text-navy">Artikel Lainnya</h3>
+              </div>
+              <div className="divide-y divide-slate-100">
                 {blogList
                   .filter((p) => p.slug !== slug)
                   .slice(0, 4)
                   .map((p) => (
-                    <Link key={p.slug} href={`/blog/${p.slug}`} className="block group">
-                      <p className="text-sm font-medium text-slate-700 group-hover:text-navy transition-colors line-clamp-2">
-                        {p.judul}
-                      </p>
-                      <p className="text-xs text-slate-400 mt-1">{p.tanggal}</p>
+                    <Link
+                      key={p.slug}
+                      href={`/blog/${p.slug}`}
+                      className="flex items-start gap-3 px-5 py-3.5 hover:bg-slate-50 transition-colors group"
+                    >
+                      <Image
+                        src={p.thumbnail}
+                        alt={p.judul}
+                        width={64}
+                        height={64}
+                        className="w-16 h-16 rounded-xl object-cover shrink-0"
+                      />
+                      <div className="flex-1 min-w-0">
+                        <span className="inline-block text-[10px] font-semibold text-brand-orange bg-brand-orange/10 px-2 py-0.5 rounded-full mb-1">
+                          {p.kategori}
+                        </span>
+                        <p className="text-sm font-medium text-slate-700 group-hover:text-navy transition-colors line-clamp-2 leading-snug">
+                          {p.judul}
+                        </p>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-navy shrink-0 self-center transition-colors" />
                     </Link>
                   ))}
               </div>
