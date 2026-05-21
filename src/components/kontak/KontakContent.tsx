@@ -163,7 +163,7 @@ export default function KontakContent() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Lokasi Sedot WC Jabodetabek "
+                  title="Lokasi Sedot WC Jabodetabek"
                 />
               </div>
             </div>
