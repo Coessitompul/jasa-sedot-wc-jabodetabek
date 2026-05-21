@@ -44,7 +44,7 @@ export default function Navbar() {
             <span className="text-white font-bold text-sm">SWJ</span>
           </div>
           <div>
-            <p className="font-display font-bold text-navy text-sm leading-tight">Sedot WC Jabodetabek Testing</p>
+            <p className="font-display font-bold text-navy text-sm leading-tight">Sedot WC Jabodetabek</p>
             <p className="text-xs text-slate-500 leading-tight">Sanitasi</p>
           </div>
         </Link>
