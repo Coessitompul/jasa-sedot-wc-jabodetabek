@@ -116,7 +116,7 @@ export default async function AreaDetailPage({
               </h2>
               <div className="prose prose-slate max-w-none space-y-4 text-slate-600">
                 <p>
-                  CV. Berkah Jaya Sanitasi melayani jasa sedot WC dan tinja profesional di seluruh wilayah{" "}
+                  Sedot WC Jabodetabek melayani jasa sedot WC dan tinja profesional di seluruh wilayah{" "}
                   <strong>{area.nama}</strong> dan sekitarnya. Dengan armada vacuum truck berkapasitas besar dan
                   teknisi berpengalaman, kami siap menangani berbagai kebutuhan sanitasi Anda.
                 </p>
