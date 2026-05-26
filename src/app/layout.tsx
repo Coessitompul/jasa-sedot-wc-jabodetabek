@@ -24,7 +24,13 @@ const defaultOgImage  = `${SITE_URL}/webp/hero-image.webp`
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  icons: { icon: "/logo-tab.svg" },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/logo-tab.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/logo-tab.svg",
+  },
 
   title: {
     template: `%s | ${COMPANY.name}`,
