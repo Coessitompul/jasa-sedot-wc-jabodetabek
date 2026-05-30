@@ -143,6 +143,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `,
           }}
         />
+        {/* Google Ads conversion tracking */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-18190369324/2kaCCIfVp7QcEKyE7OFD',
+                  'value': 1.0,
+                  'currency': 'IDR',
+                  'event_callback': callback
+                });
+                return false;
+              }
+            `,
+          }}
+        />
       </head>
       <body className="font-body bg-slate-50 text-slate-900 antialiased">
         <Navbar />
