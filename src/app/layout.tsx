@@ -4,6 +4,7 @@ import "./globals.css"
 import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
 import FloatingWA from "@/components/layout/FloatingWA"
+import MobileCTABar from "@/components/layout/MobileCTABar"
 import { COMPANY, SITE_URL } from "@/lib/constants"
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -167,9 +168,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-body bg-slate-50 text-slate-900 antialiased">
         <Navbar />
-        <main>{children}</main>
+        <main className="pb-16 lg:pb-0">{children}</main>
         <Footer />
         <FloatingWA />
+        <MobileCTABar />
       </body>
     </html>
   )

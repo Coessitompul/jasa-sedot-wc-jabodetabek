@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Phone, Menu, X } from "lucide-react"
 import WAIcon from "@/components/shared/WAIcon"
-import { COMPANY, getWALink } from "@/lib/constants"
+import { COMPANY, WA_MESSAGES, getWALink, trackWAConversion } from "@/lib/constants"
 
 const navLinks = [
   { href: "/", label: "Beranda" },
@@ -68,9 +68,10 @@ export default function Navbar() {
             ))}
           </ul>
           <a
-            href={getWALink()}
+            href={getWALink(WA_MESSAGES.hero)}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackWAConversion}
             className="hidden lg:flex items-center gap-2 bg-wa text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-wa-dark transition-colors"
           >
             <WAIcon className="w-4 h-4" />
@@ -112,9 +113,10 @@ export default function Navbar() {
               {COMPANY.phone}
             </a> */}
             <a
-              href={getWALink()}
+              href={getWALink(WA_MESSAGES.hero)}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackWAConversion}
               className="flex items-center justify-center gap-2 bg-wa text-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-wa-dark transition-colors"
             >
               <WAIcon className="w-4 h-4" />

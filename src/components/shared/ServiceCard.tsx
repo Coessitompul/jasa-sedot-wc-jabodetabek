@@ -1,6 +1,13 @@
 import { Check, type LucideIcon } from "lucide-react"
-import WAIcon from "@/components/shared/WAIcon"
-import { getWALink } from "@/lib/constants"
+import WAButton from "@/components/shared/WAButton"
+import { WA_MESSAGES, getWALink } from "@/lib/constants"
+
+const slugMessages: Record<string, string> = {
+  "sedot-wc":          WA_MESSAGES.sedotWC,
+  "sedot-ipal":        WA_MESSAGES.sedotIPAL,
+  "sedot-grease-trap": WA_MESSAGES.sedotGreaseTrap,
+  "darurat":           WA_MESSAGES.darurat,
+}
 
 type Props = {
   slug: string
@@ -14,11 +21,12 @@ type Props = {
 }
 
 export default function ServiceCard({ slug, icon: Icon, nama, deskripsi, poin, harga, variant = "compact", area }: Props) {
-  const waLink = getWALink(
-    area
-      ? `Halo, saya butuh jasa ${nama} di daerah ${area}`
-      : `Halo, saya butuh jasa ${nama}`
-  )
+  const pesan = area
+    ? `Halo, saya butuh jasa ${nama} di daerah ${area}`
+    : (slugMessages[slug] ?? `Halo, saya mau pesan jasa ${nama}. Bisa minta estimasi harga?`)
+
+  const waLink = getWALink(pesan)
+
   if (variant === "full") {
     return (
       <div id={slug} className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow p-5 md:p-8 flex flex-col">
@@ -41,15 +49,7 @@ export default function ServiceCard({ slug, icon: Icon, nama, deskripsi, poin, h
           ))}
         </ul>
         <div className="mt-auto">
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 bg-wa text-white px-6 py-3 rounded-xl font-semibold hover:bg-wa-dark transition-colors"
-          >
-            <WAIcon className="w-5 h-5" />
-            Pesan Sekarang
-          </a>
+          <WAButton href={waLink} size="md" />
         </div>
       </div>
     )
@@ -64,15 +64,7 @@ export default function ServiceCard({ slug, icon: Icon, nama, deskripsi, poin, h
       <p className="text-slate-600 text-sm mb-4 leading-relaxed line-clamp-3">{deskripsi}</p>
       <p className="text-brand-orange font-bold text-sm mb-4">{harga}</p>
       <div className="mt-auto">
-        <a
-          href={waLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 bg-wa text-white px-4 py-2.5 rounded-xl text-sm font-semibold hover:bg-wa-dark transition-colors"
-        >
-          <WAIcon className="w-4 h-4" />
-          Pesan Sekarang
-        </a>
+        <WAButton href={waLink} size="sm" />
       </div>
     </div>
   )

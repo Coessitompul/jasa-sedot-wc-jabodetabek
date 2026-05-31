@@ -18,7 +18,30 @@ export const COMPANY = {
   facebook: "https://facebook.com/sedotwcjabodetabek",
 }
 
+export const GA_CONVERSION_LABEL = "AW-18190369324/2kaCCIfVp7QcEKyE7OFD"
+
+export const WA_MESSAGES = {
+  hero:          "Halo, WC saya mampet dan butuh bantuan segera. Bisa minta estimasi harga dan waktu kedatangan?",
+  floating:      "Halo, saya butuh jasa sedot WC. Bisa minta estimasi harga dan jadwal terdekat?",
+  darurat:       "DARURAT 🚨 WC saya bermasalah parah, butuh teknisi SEKARANG. Lokasi saya di:",
+  sedotWC:       "Halo, saya mau pesan jasa Sedot WC / Tinja. Berapa harganya dan kapan bisa datang?",
+  sedotIPAL:     "Halo, saya mau tanya tentang jasa Sedot IPAL. Bisa minta penawaran harga?",
+  sedotGreaseTrap: "Halo, saya butuh jasa Sedot Grease Trap. Bisa minta estimasi harga?",
+}
+
 export function getWALink(pesan?: string) {
-  const text = pesan ?? "Halo, saya butuh jasa sedot WC. Bisa dibantu?"
+  const text = pesan ?? WA_MESSAGES.hero
   return `https://wa.me/${COMPANY.whatsapp}?text=${encodeURIComponent(text)}`
+}
+
+export function trackWAConversion() {
+  if (typeof window === "undefined") return
+  const g = (window as any).gtag
+  if (typeof g === "function") {
+    g("event", "conversion", {
+      send_to: GA_CONVERSION_LABEL,
+      value: 1.0,
+      currency: "IDR",
+    })
+  }
 }

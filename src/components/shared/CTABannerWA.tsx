@@ -1,6 +1,8 @@
+"use client"
+
 import { Phone } from "lucide-react"
 import WAIcon from "@/components/shared/WAIcon"
-import { COMPANY, getWALink } from "@/lib/constants"
+import { COMPANY, getWALink, trackWAConversion } from "@/lib/constants"
 
 type Props = {
   title?: string
@@ -22,6 +24,7 @@ export default function CTABannerWA({
               href={getWALink()}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackWAConversion}
               className="w-full sm:w-auto flex items-center justify-center gap-2 bg-wa text-white px-6 md:px-8 py-3 md:py-3.5 rounded-xl font-semibold text-sm md:text-base hover:bg-wa-dark transition-colors"
             >
               <WAIcon className="w-5 h-5" />

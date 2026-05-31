@@ -1,11 +1,17 @@
-import Image from "next/image"
-import { CheckCircle, Zap } from "lucide-react"
-import WAIcon from "@/components/shared/WAIcon"
-import { COMPANY, getWALink } from "@/lib/constants"
+"use client"
 
-const trustBadges = ["Bergaransi", "10+ Tahun", "Harga Transparan", "Respon Cepat"]
+import Image from "next/image"
+import { CheckCircle, Phone, Zap } from "lucide-react"
+
+import WAIcon from "@/components/shared/WAIcon"
+import { COMPANY, WA_MESSAGES, getWALink, trackWAConversion } from "@/lib/constants"
+
+const trustBadges = ["10.000+ Pelanggan", "10+ Tahun", "Harga Transparan", "Respon Cepat"]
+
 
 export default function HeroSection() {
+  const waHref = getWALink(WA_MESSAGES.hero)
+
   return (
     <section className="relative bg-white overflow-hidden">
       <div
@@ -37,21 +43,36 @@ export default function HeroSection() {
               masalah beres dalam sekejap.
             </p>
 
-            <div className="hero-btns flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-8">
+            <div className="hero-btns flex flex-col sm:flex-row gap-3 md:gap-4 mb-5 md:mb-6">
               <a
-                href={getWALink()}
+                href={waHref}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackWAConversion}
                 className="flex items-center justify-center gap-2 bg-wa text-white px-6 md:px-8 py-3.5 md:py-4 rounded-xl font-semibold text-base md:text-lg hover:bg-wa-dark transition-colors shadow-lg"
               >
                 <WAIcon className="w-5 h-5 md:w-6 md:h-6" />
-                Hubungi Sekarang
+                Gratis Estimasi via WhatsApp
               </a>
               <a
-                href="/layanan"
+                href={`tel:${COMPANY.phoneTel}`}
                 className="flex items-center justify-center gap-2 border-2 border-navy text-navy px-6 md:px-8 py-3.5 md:py-4 rounded-xl font-semibold text-base md:text-lg hover:bg-navy hover:text-white transition-colors"
               >
-                Layanan Kami
+                <Phone className="w-5 h-5 md:w-6 md:h-6" />
+                Telepon Sekarang
+              </a>
+            </div>
+
+            {/* Mikro-copy + nomor telepon */}
+            <div className="mb-5 md:mb-6 space-y-2">
+              <p className="text-sm text-gray-500">
+                ✓ Balas cepat &nbsp;·&nbsp; ✓ Gratis estimasi &nbsp;·&nbsp; ✓ Layanan 24 jam
+              </p>
+              <a
+                href={`tel:${COMPANY.phoneTel}`}
+                className="inline-flex items-center gap-1.5 text-base font-semibold text-brand-orange hover:underline"
+              >
+                📞 {COMPANY.phone}
               </a>
             </div>
 
