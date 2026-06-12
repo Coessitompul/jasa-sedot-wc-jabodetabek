@@ -38,4 +38,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/ 
           server-dir: ./ # <-- DIUBAH MENJADI ./ karena akun FTP Anda sudah langsung mengarah ke public_html
-          dangerous-clean-slate: true # Menggunakan true untuk membersihkan sisa folder acak /_next/ yang gagal sebelumnya
+          dangerous-clean-slate: false # Menggunakan true untuk membersihkan sisa folder acak /_next/ yang gagal sebelumnya
