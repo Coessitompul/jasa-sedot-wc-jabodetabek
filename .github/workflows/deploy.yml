@@ -1,35 +1,41 @@
-name: Deploy to Hostinger
+name: Deploy Next.js Static to Hostinger
 
 on:
   push:
     branches:
-      - master
+      - master # Skrip berjalan otomatis setiap ada push ke branch master
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      # 1. Mengambil source code terbaru dari repositori GitHub
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
+      # 2. Setup Node.js versi 24 (Disamakan dengan versi laptop Anda)
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: '24'
+          cache: 'npm'
 
+      # 3. Menginstal dependencies menggunakan flag --legacy-peer-deps agar stabil di Node 24
       - name: Install dependencies
-        run: npm install
+        run: npm ci --legacy-peer-deps
 
+      # 4. Memproses kompilasi Next.js menjadi HTML/CSS/JS Statis (Menghasilkan folder ./out)
       - name: Build Next.js
         run: npm run build
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      # 5. Mengirim isi folder lokal './out/' langsung ke lokasi tujuan FTP
+      - name: Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out/
-          server-dir: ./
+          local-dir: ./out/ 
+          server-dir: ./ # <-- DIUBAH MENJADI ./ karena akun FTP Anda sudah langsung mengarah ke public_html
           dangerous-clean-slate: true # Menggunakan true untuk membersihkan sisa folder acak /_next/ yang gagal sebelumnya
